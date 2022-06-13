@@ -1,27 +1,44 @@
 # quasar_docker
 
-First build the image doing:
+First build the image:
 ```bash
 sudo docker build -t [somename/sometag] .
 ```
 
-Then update the image clause at docker-compose.yml file like:
+Set the **image** clause on docker-compose.yml file, for example:
+
+```bash
 	image: "[somename/sometag]"
-you can change the redirect port also then run the container:
+```
+
+here you can change the redirect port also.
+
+Then run the container in background:
 
 
 ```bash
 docker-compose up -d
 ```
 
-then access to your container 
+Access to your container
+ 
 ```bash
 docker-composer exec [name of service provided] bash
 ```
-inside the container ,create a quasar project
+
+Once inside the container ,create a quasar project
 
 ```bash
 npm init quasar
 ```
 
-and start it and access on port 9999 if you go with vite or 8887 if you go with babel. 
+Finally cd into the project and start it with
+
+```bash
+quasar dev
+```
+
+You will access it on port 9999 if you go with vite or 8887 if you go with webpack. 
+
+You can begin coding directly on the /home/project-vue-docker folder.
+  
