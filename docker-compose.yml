@@ -1,0 +1,11 @@
+version: '3.5'
+services:
+  quasar:
+    image: "leo/quasar"
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    ports:
+      - "8887:8080"
+      - "9999:9000"
+    volumes:
+            - /home/project-vue-docker:/srv/app
